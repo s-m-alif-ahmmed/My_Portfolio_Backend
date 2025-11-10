@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\Education\EducationController;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+// Education routes
+Route::get('/education/list',[EducationController::class, 'index']);
+Route::get('/education/show/{id}',[EducationController::class, 'show']);
