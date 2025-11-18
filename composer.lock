@@ -4,8 +4,70 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5eb1809fda58373ef84ce87e58209a73",
+    "content-hash": "c4c56b44d5b7d465524305dd258e5443",
     "packages": [
+        {
+            "name": "alifahmmed/helpers-package",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/s-m-alif-ahmmed/helpers-package.git",
+                "reference": "8107f6b09f2ac0c1531efe5b232aab4d27c55839"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/s-m-alif-ahmmed/helpers-package/zipball/8107f6b09f2ac0c1531efe5b232aab4d27c55839",
+                "reference": "8107f6b09f2ac0c1531efe5b232aab4d27c55839",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^9.0|^10.0|^11.0|^12.0",
+                "php": ">=8.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Helper": "AlifAhmmed\\HelperPackage\\Helpers\\Helper"
+                    },
+                    "providers": [
+                        "AlifAhmmed\\HelperPackage\\AppHelperServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AlifAhmmed\\HelperPackage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "S M Alif Ahmmed",
+                    "email": "smalifahmmed@gmail.com",
+                    "homepage": "https://smalifahmmed.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel helper package for file uploads, slug generation, and JSON responses",
+            "homepage": "https://github.com/s-m-alif-ahmmed/helpers-package",
+            "keywords": [
+                "JSON responses",
+                "file upload",
+                "helper",
+                "laravel",
+                "package",
+                "slug generation"
+            ],
+            "support": {
+                "issues": "https://github.com/s-m-alif-ahmmed/helpers-package/issues",
+                "source": "https://github.com/s-m-alif-ahmmed/helpers-package/tree/v1.1.1"
+            },
+            "time": "2025-11-18T08:19:15+00:00"
+        },
         {
             "name": "anourvalar/eloquent-serialize",
             "version": "1.3.4",

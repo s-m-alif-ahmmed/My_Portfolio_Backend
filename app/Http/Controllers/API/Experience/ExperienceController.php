@@ -1,26 +1,26 @@
 <?php
 
-namespace App\Http\Controllers\API\Education;
+namespace App\Http\Controllers\API\Experience;
 
 use AlifAhmmed\HelperPackage\Traits\AllTraits;
 use App\Http\Controllers\Controller;
 use App\Models\Education;
-use Illuminate\Http\Request;
+use App\Models\Experience;
 
-class EducationController extends Controller
+class ExperienceController extends Controller
 {
     use AllTraits;
 
     public function index()
     {
-        $data = Education::all();
+        $data = Experience::all();
 
         return $this->success('Data retrieved successfully.', $data, 200);
     }
 
     public function show($id)
     {
-        $data = Education::find($id);
+        $data = Experience::find($id);
 
         if (!$data)
         {
@@ -29,5 +29,4 @@ class EducationController extends Controller
 
         return $this->success('Data retrieved successfully.', $data, 200);
     }
-
 }

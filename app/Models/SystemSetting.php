@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use AlifAhmmed\HelperPackage\Traits\AllTraits;
 use App\Helpers\Helper;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class SystemSetting extends Model
 {
-    use HasFactory;
+    use HasFactory, AllTraits;
 
     protected $fillable = [
         'title',
@@ -29,23 +30,11 @@ class SystemSetting extends Model
     ];
 
     public function getLogoAttribute($value){
-        if (filter_var($value, FILTER_VALIDATE_URL)) {
-            return $value;
-        }
-        if (request()->is('api/*') && !empty($value)) {
-            return url($value);
-        }
-        return $value;
+        return $this->fullImageUrlForApi($value);
     }
 
     public function getFaviconAttribute($value){
-        if (filter_var($value, FILTER_VALIDATE_URL)) {
-            return $value;
-        }
-        if (request()->is('api/*') && !empty($value)) {
-            return url($value);
-        }
-        return $value;
+        return $this->fullImageUrlForApi($value);
     }
 
     protected static function booted()
@@ -54,13 +43,13 @@ class SystemSetting extends Model
             if ($systemSetting->isDirty('favicon')) {
                 $oldImage = $systemSetting->getOriginal('favicon');
                 if ($oldImage) {
-                    Helper::fileDelete(public_path($oldImage));
+                    $systemSetting->deleteFromPublic($systemSetting, 'favicon');
                 }
             }
             if ($systemSetting->isDirty('logo')) {
                 $oldImage = $systemSetting->getOriginal('logo');
                 if ($oldImage) {
-                    Helper::fileDelete(public_path($oldImage));
+                    $systemSetting->deleteFromPublic($systemSetting, 'logo');
                 }
             }
         });
