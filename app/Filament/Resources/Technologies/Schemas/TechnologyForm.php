@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Filament\Resources\Technologies\Schemas;
+
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Schema;
+
+class TechnologyForm
+{
+    public static function configure(Schema $schema): Schema
+    {
+        return $schema
+            ->components([
+                TextInput::make('name'),
+                TextInput::make('slug')
+                    ->required(),
+                Select::make('status')
+                    ->options(['Active' => 'Active', 'Inactive' => 'Inactive'])
+                    ->default('Active')
+                    ->required(),
+            ]);
+    }
+}

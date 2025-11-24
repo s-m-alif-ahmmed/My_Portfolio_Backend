@@ -11,6 +11,11 @@ class EditEducation extends EditRecord
 {
     protected static string $resource = EducationResource::class;
 
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+
     protected function getHeaderActions(): array
     {
         return [

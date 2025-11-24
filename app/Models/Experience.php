@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Experience extends Model
 {
@@ -14,6 +15,7 @@ class Experience extends Model
         'leave_year',
         'is_running',
         'office_name',
+        'logo',
         'description',
         'website_url',
         'position',
@@ -24,4 +26,10 @@ class Experience extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function groups():HasMany
+    {
+        return $this->hasMany(Project::class, 'project_id');
+    }
+
 }

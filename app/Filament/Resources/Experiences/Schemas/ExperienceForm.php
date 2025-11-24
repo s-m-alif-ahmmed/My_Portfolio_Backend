@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Experiences\Schemas;
 
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
@@ -16,6 +17,12 @@ class ExperienceForm
         return $schema
             ->components([
                 TextInput::make('office_name'),
+                FileUpload::make('logo')
+                    ->image()
+                    ->disk('public')
+                    ->directory('uploads/experiences')
+                    ->visibility('public')
+                    ->maxSize(10240),
                 DatePicker::make('start_year'),
                 DatePicker::make('leave_year'),
                 Toggle::make('is_running')

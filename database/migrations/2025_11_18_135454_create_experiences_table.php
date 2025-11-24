@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('experiences', function (Blueprint $table) {
             $table->id();
             $table->string('office_name')->nullable();
+            $table->string('logo')->nullable();
             $table->date('start_year')->nullable();
             $table->date('leave_year')->nullable();
             $table->boolean('is_running')->default(false);

@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Filament\Resources\Experiences\Pages;
+namespace App\Filament\Resources\Categories\Pages;
 
-use App\Filament\Resources\Experiences\ExperienceResource;
+use App\Filament\Resources\Categories\CategoryResource;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\ViewAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditExperience extends EditRecord
+class EditCategory extends EditRecord
 {
-    protected static string $resource = ExperienceResource::class;
+    protected static string $resource = CategoryResource::class;
 
     protected function getRedirectUrl(): string
     {

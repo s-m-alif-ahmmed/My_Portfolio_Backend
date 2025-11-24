@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Filament\Resources\Experiences\Pages;
+namespace App\Filament\Resources\Technologies\Pages;
 
-use App\Filament\Resources\Experiences\ExperienceResource;
+use App\Filament\Resources\Technologies\TechnologyResource;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\ViewAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditExperience extends EditRecord
+class EditTechnology extends EditRecord
 {
-    protected static string $resource = ExperienceResource::class;
+    protected static string $resource = TechnologyResource::class;
 
     protected function getRedirectUrl(): string
     {
